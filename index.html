@@ -1,0 +1,494 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<link rel="icon" type="image/svg+xml" href="svg/icon_app.svg">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Illuminator — брендбук</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geologica:wght@200;300;400;600&family=Ysabeau+Office:ital,wght@0,300;0,400;0,600;1,300&family=Ysabeau+SC:wght@400;600&display=swap">
+<style>
+/* Brand book: the same night-dark system as the logobook, but organised as a story — meaning → voice → visual
+   language → motion → how it lives on real carriers. Light (glow, sparks, gradient rays) is the recurring device. */
+:root {
+  color-scheme: dark;
+  --ink: #0B0710; --ink-2: #130C19; --ink-3: #1C1224; --violet: #1E1030; --line: #2B1F35;
+  --fg: #F6ECE6; --muted: #A8949F;
+  --fuchsia: #E81EE0; --rose: #F21C7C; --coral: #F7603E; --gold: #FBC662; --cream: #FBEAA4; --letters: #F8CF88;
+  --grad: linear-gradient(90deg, #E81EE0, #F21C7C 35%, #F7603E 65%, #FBC662);
+  --grad-v: linear-gradient(0deg, #FBEAA4, #FBC662 22%, #F7603E 48%, #F21C7C 72%, #E81EE0);
+  --display: "Geologica", "Segoe UI", system-ui, sans-serif;
+  --body: "Ysabeau Office", "Segoe UI", system-ui, sans-serif;
+  --sc: "Ysabeau SC", "Ysabeau Office", system-ui, sans-serif;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { background: var(--ink); color: var(--fg); font-family: var(--body); font-size: 17px; line-height: 1.55; margin: 0; }
+img { display: block; max-width: 100%; height: auto; }
+.wrap { max-width: 1280px; margin: 0 auto; padding-left: max(20px, env(safe-area-inset-left, 0px)); padding-right: max(20px, env(safe-area-inset-right, 0px)); }
+.sc { font-family: var(--sc); letter-spacing: .08em; }
+.grad-t { background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+/* hero */
+.hero { position: relative; overflow: hidden; border-bottom: 1px solid var(--line); min-height: min(92vh, 900px); display: grid; }
+.hero::before { content: ""; position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(34% 40% at 50% 40%, rgba(242, 28, 124, .20), transparent 70%), radial-gradient(18% 26% at 50% 28%, rgba(232, 30, 224, .14), transparent 70%), radial-gradient(40% 30% at 50% 100%, rgba(251, 198, 98, .06), transparent 70%); }
+.hero .wrap { position: relative; padding-block: 34px 56px; display: grid; gap: 40px; align-content: space-between; width: 100%; }
+.top { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; font: 300 13px/1.2 var(--display); letter-spacing: .14em; text-transform: uppercase; color: var(--muted); }
+.hero .logo { width: min(980px, 100%); margin: 0 auto; }
+.hero h1 { font: 200 clamp(40px, 7vw, 104px)/.98 var(--display); letter-spacing: -.025em; margin: 0; text-wrap: balance; }
+.hero h1 b { font-weight: 600; }
+.hero .lede { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 40px; align-items: end; }
+.hero p { margin: 0; color: var(--muted); max-width: 50ch; }
+.stars { position: absolute; inset: 0; pointer-events: none; }
+.stars img { position: absolute; opacity: .55; }
+
+nav.toc { border-bottom: 1px solid var(--line); position: sticky; top: 0; background: rgba(11, 7, 16, .88); backdrop-filter: blur(10px); z-index: 5; }
+nav.toc ol { list-style: none; margin: 0; padding: 14px 0; display: flex; flex-wrap: wrap; gap: 6px 22px; font: 400 14px var(--display); }
+nav.toc a { color: var(--muted); text-decoration: none; }
+nav.toc a:hover, nav.toc a:focus-visible { color: var(--fg); }
+nav.toc span { color: var(--rose); font-variant-numeric: tabular-nums; margin-right: 6px; }
+
+/* chapters */
+section.ch { border-bottom: 1px solid var(--line); }
+section.ch > .wrap { display: grid; grid-template-columns: minmax(0, 300px) minmax(0, 1fr); gap: 48px; padding-block: 80px; }
+.cap .num { font: 300 13px var(--display); letter-spacing: .14em; color: var(--rose); font-variant-numeric: tabular-nums; }
+.cap h2 { font: 300 clamp(28px, 3.2vw, 42px)/1.06 var(--display); letter-spacing: -.01em; margin: 10px 0 16px; text-wrap: balance; }
+.cap p { margin: 0 0 12px; color: var(--muted); }
+.cap p strong { color: var(--fg); font-weight: 600; }
+.stage { display: grid; gap: 16px; min-width: 0; align-content: start; }
+.plate { background: var(--ink-2); border: 1px solid var(--line); border-radius: 18px; padding: clamp(20px, 3.4vw, 44px); min-width: 0; }
+.label { font: 400 12px var(--display); letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.grid2 { display: grid; gap: 16px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.grid3 { display: grid; gap: 16px; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.grid4 { display: grid; gap: 16px; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+h3 { font: 400 22px/1.2 var(--display); margin: 0 0 10px; }
+.plate p { margin: 0; color: var(--muted); }
+
+/* 01 essence */
+.manifest { font: 200 clamp(26px, 3.4vw, 46px)/1.14 var(--display); letter-spacing: -.015em; margin: 0; text-wrap: balance; }
+.manifest em { font-style: normal; }
+.kv { display: grid; grid-template-columns: 160px minmax(0, 1fr); gap: 10px 24px; margin: 0; }
+.kv dt { color: var(--muted); font: 400 12px/1.9 var(--display); letter-spacing: .12em; text-transform: uppercase; }
+.kv dd { margin: 0; color: var(--fg); }
+.val { position: relative; overflow: hidden; }
+.val .ix { width: 26px; margin-bottom: 18px; }
+.val h3 { font-size: 24px; }
+
+/* 02 voice */
+.scale { display: grid; gap: 18px; }
+.sl { display: grid; grid-template-columns: 130px minmax(0, 1fr) 130px; gap: 14px; align-items: center; font: 400 14px var(--display); color: var(--muted); }
+.sl span:last-child { text-align: right; }
+.bar { height: 4px; border-radius: 4px; background: var(--line); position: relative; }
+.bar i { position: absolute; top: 50%; width: 18px; height: 18px; margin: -9px 0 0 -9px; border-radius: 50%; background: var(--grad); box-shadow: 0 0 18px rgba(242, 28, 124, .6); }
+.say { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0; border: 1px solid var(--line); border-radius: 18px; overflow: hidden; }
+.say > div { padding: 18px 22px; border-bottom: 1px solid var(--line); }
+.say > div:nth-child(odd) { border-right: 1px solid var(--line); }
+.say .h { font: 400 12px var(--display); letter-spacing: .12em; text-transform: uppercase; background: var(--ink-3); }
+.say .yes::before { content: "✓  "; color: var(--gold); font-family: var(--display); }
+.say .no { color: var(--muted); }
+.say .no::before { content: "✕  "; color: #FF5A6E; font-family: var(--display); }
+.say > div:nth-last-child(-n+2) { border-bottom: 0; }
+
+/* 03 mark */
+.marks { display: grid; gap: 16px; grid-template-columns: 2fr 1fr 1fr; }
+.marks .plate { display: grid; place-items: center; gap: 16px; background: var(--ink); min-height: 260px; }
+.marks .plate .label { justify-self: start; }
+.marks img.w { width: 100%; } .marks img.i { width: min(150px, 70%); } .marks img.m { height: 150px; width: auto; }
+.link { color: var(--cream); text-decoration: none; border-bottom: 1px solid rgba(251, 234, 164, .35); }
+.link:hover { border-bottom-color: var(--cream); }
+
+/* 04 colour */
+.pal { display: grid; gap: 12px; grid-template-columns: repeat(7, minmax(0, 1fr)); }
+.chip { border-radius: 14px; aspect-ratio: 3 / 4; padding: 12px; display: flex; flex-direction: column; justify-content: flex-end; font: 400 13px/1.3 var(--display); border: 1px solid rgba(255, 255, 255, .06); }
+.chip b { font-weight: 400; font-size: 15px; display: block; }
+.prop { display: flex; height: 64px; border-radius: 14px; overflow: hidden; border: 1px solid var(--line); }
+.prop div { display: flex; align-items: flex-end; padding: 8px 10px; font: 400 12px var(--display); letter-spacing: .06em; }
+.pairs { display: grid; gap: 12px; grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.pair { border-radius: 14px; padding: 18px; min-height: 120px; display: grid; align-content: space-between; border: 1px solid var(--line); }
+.pair b { font: 300 30px var(--display); }
+.pair small { font: 400 12px var(--display); letter-spacing: .06em; opacity: .8; }
+.gradbar { height: 72px; border-radius: 14px; background: var(--grad); }
+
+/* 05 type */
+.spec { display: grid; gap: 6px; }
+.spec .big { font-size: clamp(56px, 8vw, 112px); line-height: .95; letter-spacing: -.03em; }
+.spec .abc { color: var(--muted); font-size: 18px; overflow-wrap: anywhere; margin-top: 18px; }
+.typescale { display: grid; gap: 0; border-top: 1px solid var(--line); }
+.typescale > div { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 20px; align-items: baseline; padding: 16px 0; border-bottom: 1px solid var(--line); }
+.typescale .meta { font: 400 12px/1.5 var(--display); color: var(--muted); letter-spacing: .04em; }
+
+/* 06 graphics */
+.gfx { display: grid; gap: 16px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.gfx .plate { padding: 0; overflow: hidden; display: grid; grid-template-rows: 240px auto; }
+.gfx .art { position: relative; background: var(--ink); overflow: hidden; }
+.gfx .txt { padding: 18px 22px 22px; }
+.art.spark img { position: absolute; left: 50%; top: 50%; width: 92px; transform: translate(-50%, -50%); filter: none; }
+.art.constel img { position: absolute; }
+.art.glow::before { content: ""; position: absolute; inset: 0; background: radial-gradient(40% 55% at 50% 60%, rgba(242, 28, 124, .55), rgba(232, 30, 224, .18) 45%, transparent 72%); }
+.art.glow::after { content: ""; position: absolute; left: 50%; top: 60%; width: 12px; height: 12px; margin: -6px; border-radius: 50%; background: var(--cream); box-shadow: 0 0 40px 18px rgba(251, 198, 98, .55); }
+.art.ray::before { content: ""; position: absolute; left: -10%; right: -10%; top: 50%; height: 2px; background: linear-gradient(90deg, transparent, #E81EE0 20%, #F21C7C 45%, #FBC662 70%, transparent); box-shadow: 0 0 22px 4px rgba(242, 28, 124, .45); transform: rotate(-12deg); }
+.art.ray::after { content: ""; position: absolute; left: 18%; right: 30%; top: 64%; height: 1px; background: linear-gradient(90deg, transparent, #F7603E 40%, transparent); transform: rotate(-12deg); opacity: .8; }
+.art.tongues { display: flex; align-items: flex-end; justify-content: center; gap: 14px; padding-bottom: 0; }
+.art.tongues i { display: block; width: 56px; border-radius: 60% 60% 8px 8px / 85% 85% 8px 8px; background: var(--grad-v); opacity: .95; }
+
+/* 07 imagery */
+.img3 { display: grid; gap: 16px; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.scene { aspect-ratio: 4 / 5; border-radius: 16px; position: relative; overflow: hidden; border: 1px solid var(--line); }
+.scene.a { background: radial-gradient(30% 34% at 64% 36%, #FBC662 0, #F7603E 18%, rgba(242,28,124,.55) 40%, transparent 70%), linear-gradient(#120A1A, #07040B); }
+.scene.b { background: radial-gradient(60% 18% at 50% 104%, rgba(251,198,98,.7), transparent 70%), radial-gradient(12% 10% at 30% 40%, rgba(232,30,224,.8), transparent 70%), radial-gradient(9% 8% at 70% 30%, rgba(251,234,164,.9), transparent 70%), radial-gradient(7% 6% at 56% 62%, rgba(247,96,62,.8), transparent 70%), #0B0710; }
+.scene.c { background: linear-gradient(110deg, transparent 38%, rgba(251,234,164,.20) 46%, rgba(242,28,124,.35) 52%, transparent 60%), radial-gradient(22% 22% at 50% 52%, rgba(232,30,224,.55), transparent 70%), #0E0814; }
+.scene span { position: absolute; left: 14px; bottom: 12px; font: 400 12px var(--display); letter-spacing: .12em; text-transform: uppercase; color: rgba(246,236,230,.8); }
+.rules { list-style: none; margin: 0; padding: 0; display: grid; gap: 0; border-top: 1px solid var(--line); }
+.rules li { padding: 14px 0; border-bottom: 1px solid var(--line); display: grid; grid-template-columns: 34px minmax(0, 1fr); gap: 12px; color: var(--muted); }
+.rules li b { color: var(--fg); font-weight: 600; }
+.rules li::before { content: counter(r, decimal-leading-zero); counter-increment: r; font: 300 13px/1.9 var(--display); color: var(--rose); }
+.rules { counter-reset: r; }
+
+/* 08 motion */
+.motion { display: grid; gap: 16px; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+.motion .plate.show { background: var(--ink); display: grid; place-items: center; min-height: 360px; }
+.motion .show img { height: 260px; width: auto; }
+.tok { display: grid; gap: 0; border-top: 1px solid var(--line); }
+.tok div { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 12px; padding: 12px 0; border-bottom: 1px solid var(--line); color: var(--muted); }
+.tok code { font: 400 14px var(--display); color: var(--cream); }
+
+/* 09 carriers */
+.carriers { display: grid; gap: 16px; grid-template-columns: repeat(6, minmax(0, 1fr)); }
+.cr { background: var(--ink-2); border: 1px solid var(--line); border-radius: 18px; padding: 22px; display: grid; gap: 14px; align-content: start; min-width: 0; }
+.cr .label { order: 2; }
+.c-cards { grid-column: span 4; } .c-avatar { grid-column: span 2; } .c-banner { grid-column: span 6; }
+.c-slide { grid-column: span 4; align-content: center; } .c-phone { grid-column: span 2; } .c-badge { grid-column: span 2; } .c-mail { grid-column: span 4; align-content: center; }
+/* business card 85x55 */
+.bc { display: grid; gap: 14px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.card { aspect-ratio: 85 / 55; border-radius: 10px; position: relative; overflow: hidden; box-shadow: 0 18px 40px rgba(0, 0, 0, .5); }
+.card.front { background: radial-gradient(50% 70% at 50% 46%, rgba(242,28,124,.22), transparent 70%), var(--ink); display: grid; place-items: center; }
+.card.front img { width: 62%; }
+.card.back { background: var(--ink); padding: 8% 9%; display: grid; align-content: space-between; }
+.card.back .nm { font: 300 clamp(15px, 1.7vw, 22px)/1.1 var(--display); }
+.card.back .rl { font: 400 clamp(10px, .95vw, 12px) var(--sc); letter-spacing: .1em; color: var(--letters); margin-top: 4px; }
+.card.back .ct { font: 400 clamp(9px, .9vw, 12px)/1.55 var(--body); color: var(--muted); }
+.card.back .mk { position: absolute; right: 9%; top: 12%; width: 9%; }
+.card.back .ln { position: absolute; left: 0; right: 0; bottom: 0; height: 3px; background: var(--grad); }
+/* avatar */
+.av { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; justify-content: center; padding: 14px 0; }
+.av .c { border-radius: 50%; overflow: hidden; background: var(--ink); display: grid; place-items: center; border: 1px solid var(--line); }
+.av .c img { width: 66%; }
+.av .c.l { width: 112px; height: 112px; box-shadow: 0 0 0 3px var(--ink-2), 0 0 0 5px #F21C7C; }
+.av .c.m { width: 64px; height: 64px; } .av .c.s { width: 36px; height: 36px; }
+/* banner 3:1 */
+.banner { aspect-ratio: 3 / 1; border-radius: 12px; overflow: hidden; position: relative; background: radial-gradient(28% 70% at 74% 50%, rgba(242,28,124,.28), transparent 70%), radial-gradient(16% 40% at 74% 40%, rgba(232,30,224,.18), transparent 70%), var(--ink); display: grid; grid-template-columns: 1.1fr 1fr; align-items: center; padding: 0 6%; gap: 4%; }
+.banner h4 { font: 200 clamp(20px, 3.6vw, 52px)/1.02 var(--display); margin: 0; letter-spacing: -.02em; }
+.banner h4 b { font-weight: 600; }
+.banner p { margin: 10px 0 0; color: var(--muted); font-size: clamp(11px, 1.2vw, 16px); }
+.banner img { width: 100%; }
+.banner .sp { position: absolute; width: 1.6%; opacity: .7; }
+/* slide 16:9 */
+.slide { aspect-ratio: 16 / 9; border-radius: 10px; overflow: hidden; position: relative; background: var(--ink); padding: 6% 7%; display: grid; grid-template-rows: auto 1fr auto; box-shadow: 0 18px 40px rgba(0,0,0,.45); }
+.slide .hd { display: flex; justify-content: space-between; align-items: center; }
+.slide .hd img { width: 18%; }
+.slide .hd span { font: 400 clamp(8px, .9vw, 12px) var(--sc); letter-spacing: .12em; color: var(--muted); }
+.slide h5 { font: 200 clamp(20px, 3.4vw, 48px)/1.02 var(--display); margin: 0; align-self: center; letter-spacing: -.02em; max-width: 14ch; }
+.slide h5 b { font-weight: 600; }
+.slide .ft { display: flex; gap: 6%; font: 400 clamp(8px, .9vw, 12px)/1.4 var(--display); color: var(--muted); }
+.slide .ft b { display: block; font: 300 clamp(14px, 1.8vw, 26px) var(--display); color: var(--fg); }
+.slide .glow { position: absolute; right: -8%; top: 10%; width: 46%; aspect-ratio: 1; background: radial-gradient(closest-side, rgba(242,28,124,.32), transparent); pointer-events: none; }
+.slide .bigmark { position: absolute; right: 7%; top: 22%; height: 58%; width: auto; }
+/* phone splash */
+.phone { width: min(220px, 100%); margin: 0 auto; aspect-ratio: 9 / 19; border-radius: 30px; border: 6px solid #241A2C; background: radial-gradient(60% 34% at 50% 42%, rgba(242,28,124,.25), transparent 70%), var(--ink); position: relative; overflow: hidden; display: grid; place-items: center; }
+.phone img { width: 46%; margin-top: -18%; }
+.phone .pr { position: absolute; left: 20%; right: 20%; bottom: 20%; height: 3px; border-radius: 3px; background: var(--line); overflow: hidden; }
+.phone .pr i { display: block; height: 100%; width: 62%; background: var(--grad); border-radius: 3px; }
+.phone .ps { position: absolute; bottom: 12%; left: 0; right: 0; text-align: center; font: 400 10px var(--sc); letter-spacing: .14em; color: var(--muted); }
+/* badge */
+.badge { width: min(190px, 100%); margin: 0 auto; aspect-ratio: 2 / 3; border-radius: 14px; background: var(--ink); border: 1px solid var(--line); overflow: hidden; display: grid; grid-template-rows: 1.1fr 1fr auto; position: relative; box-shadow: 0 18px 40px rgba(0,0,0,.45); }
+.badge::before { content: ""; position: absolute; top: 7px; left: 50%; width: 30px; height: 6px; margin-left: -15px; border-radius: 6px; background: #241A2C; }
+.badge .t { display: grid; place-items: center; background: radial-gradient(60% 60% at 50% 60%, rgba(242,28,124,.3), transparent 70%); }
+.badge .t img { width: 38%; }
+.badge .n { padding: 0 14px; display: grid; align-content: center; }
+.badge .n b { font: 300 18px/1.1 var(--display); } .badge .n span { font: 400 11px var(--sc); letter-spacing: .1em; color: var(--letters); }
+.badge .f { height: 26px; background: var(--grad); display: grid; place-items: center; font: 600 10px var(--display); letter-spacing: .16em; color: var(--ink); }
+/* mail */
+.mail { background: #FFFFFF; color: #1A1220; border-radius: 12px; padding: 22px 26px; display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 20px; align-items: center; }
+.mail img { width: 64px; }
+.mail b { font: 400 17px var(--display); display: block; }
+.mail span { font: 400 13px/1.5 var(--body); color: #5B4A52; display: block; }
+.mail .ln { height: 2px; width: 80px; background: var(--grad); margin: 8px 0; }
+
+/* 10 don'ts / resources */
+.list { list-style: none; margin: 0; padding: 0; display: grid; border-top: 1px solid var(--line); }
+.list li { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr); gap: 16px; padding: 13px 0; border-bottom: 1px solid var(--line); }
+.list code { font: 400 14px var(--display); color: var(--cream); overflow-wrap: anywhere; }
+.list span { color: var(--muted); }
+footer .wrap { padding-block: 44px 64px; display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; align-items: center; color: var(--muted); font: 300 13px var(--display); letter-spacing: .06em; }
+footer img { width: 170px; }
+
+a:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 4px; }
+@media (max-width: 1000px) {
+  .pal { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .carriers { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .c-cards, .c-banner, .c-slide, .c-mail { grid-column: 1 / -1; } .c-avatar, .c-phone, .c-badge { grid-column: span 1; }
+  .c-avatar { grid-column: 1 / -1; }
+}
+@media (max-width: 860px) {
+  section.ch > .wrap { grid-template-columns: 1fr; gap: 24px; padding-block: 56px; }
+  .hero .lede, .grid2, .gfx, .motion { grid-template-columns: 1fr; }
+  .grid4, .pairs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid3, .img3, .marks { grid-template-columns: 1fr; }
+  .scene { aspect-ratio: 16 / 9; } .chip { aspect-ratio: 4 / 3; }
+  .sl { grid-template-columns: 90px minmax(0, 1fr) 90px; font-size: 13px; }
+}
+@media (max-width: 560px) {
+  .pal { grid-template-columns: repeat(2, minmax(0, 1fr)); } .chip { aspect-ratio: 2 / 1; }
+  .say { grid-template-columns: 1fr; } .say > div:nth-child(odd) { border-right: 0; } .say > div:nth-last-child(2) { border-bottom: 1px solid var(--line); }
+  .bc, .carriers { grid-template-columns: 1fr; } .c-phone, .c-badge { grid-column: 1 / -1; }
+  .kv { grid-template-columns: 1fr; gap: 2px; } .kv dd { margin-bottom: 12px; }
+  .typescale > div, .list li { grid-template-columns: 1fr; gap: 4px; }
+  .banner { grid-template-columns: 1fr; aspect-ratio: auto; padding: 8%; gap: 18px; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="stars" aria-hidden="true">
+    <img src="svg/spark.svg" alt="" style="left:9%;top:22%;width:18px">
+    <img src="svg/spark.svg" alt="" style="left:84%;top:16%;width:12px;opacity:.4">
+    <img src="svg/spark_rose.svg" alt="" style="left:76%;top:58%;width:10px;opacity:.5">
+    <img src="svg/spark.svg" alt="" style="left:16%;top:66%;width:9px;opacity:.35">
+    <img src="svg/spark_white.svg" alt="" style="left:62%;top:9%;width:8px;opacity:.3">
+  </div>
+  <div class="wrap">
+    <div class="top"><span>Illuminator · студия игр</span><span>Брендбук · версия 1 · ноябрь 2026</span></div>
+    <img class="logo motion" src="svg/logo_color_anim.svg" data-still="svg/logo_color.svg" alt="Логотип Illuminator: надпись illuminator, над буквой i пламя со звездой" width="3695" height="1254">
+    <div class="lede">
+      <h1>Свет — <b class="grad-t">часть игры</b></h1>
+      <p>Как звучит, выглядит и движется Illuminator: смысл бренда, голос, цвет, шрифты, графика и примеры носителей. Правила самого знака — в логобуке.</p>
+    </div>
+  </div>
+</header>
+
+<nav class="toc" aria-label="Разделы">
+  <div class="wrap"><ol>
+    <li><a href="#essence"><span>01</span>Суть</a></li><li><a href="#voice"><span>02</span>Голос</a></li>
+    <li><a href="#mark"><span>03</span>Знак</a></li><li><a href="#color"><span>04</span>Цвет</a></li>
+    <li><a href="#type"><span>05</span>Шрифты</a></li><li><a href="#gfx"><span>06</span>Графика</a></li>
+    <li><a href="#imagery"><span>07</span>Образы</a></li><li><a href="#motion"><span>08</span>Движение</a></li>
+    <li><a href="#carriers"><span>09</span>Носители</a></li><li><a href="#files"><span>10</span>Файлы</a></li>
+  </ol></div>
+</nav>
+
+<main>
+<section class="ch" id="essence"><div class="wrap">
+  <div class="cap"><div class="num">01</div><h2>Суть бренда</h2>
+    <p>Illuminator — студия, в которой свет помогает рассказывать истории. Он собирает внимание игрока, объясняет механику и оставляет место для игры.</p>
+    <p>Всё остальное в брендбуке вырастает из этой мысли.</p></div>
+  <div class="stage">
+    <div class="plate"><p class="manifest">Мы делаем не просто слоты. Мы делаем <em class="grad-t">игры с характером</em>, где свет ведёт игрока от первой искры до большого выигрыша.</p></div>
+    <div class="plate"><dl class="kv">
+      <dt>Миссия</dt><dd>Делать игры, которые понятны с первого спина и запоминаются после последнего.</dd>
+      <dt>Для кого</dt><dd>Операторы и игроки. Операторам — готовые игры и все материалы для запуска; игрокам — миры, в которые хочется вернуться.</dd>
+      <dt>Обещание</dt><dd>У каждой игры свой мир, но один почерк: ясная механика, тёплый свет и аккуратная подача.</dd>
+      <dt>Одной фразой</dt><dd><span class="grad-t" style="font-weight:600">Свет — часть игры.</span></dd>
+    </dl></div>
+    <div class="grid4">
+      <div class="plate val"><img class="ix" src="svg/spark.svg" alt=""><h3>Свет</h3><p>Подсветка объясняет, что происходит на поле, ещё до первой выплаты.</p></div>
+      <div class="plate val"><img class="ix" src="svg/spark.svg" alt=""><h3>Характер</h3><p>Каждая игра — свой мир с героями, настроением и юмором.</p></div>
+      <div class="plate val"><img class="ix" src="svg/spark.svg" alt=""><h3>Ясность</h3><p>Правила, механики и материалы — без мелкого шрифта и лишних шагов.</p></div>
+      <div class="plate val"><img class="ix" src="svg/spark.svg" alt=""><h3>Почерк</h3><p>Миры разные, качество одно. Игру Illuminator узнают по подаче.</p></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="ch" id="voice"><div class="wrap">
+  <div class="cap"><div class="num">02</div><h2>Характер и голос</h2>
+    <p>Illuminator говорит как опытный проводник по ночному городу: тепло, уверенно и немного загадочно. Знает дорогу, не торопит и не кричит.</p>
+    <p>С операторами — точно и по делу. С игроками — образно, но без обещаний выигрыша.</p></div>
+  <div class="stage">
+    <div class="plate scale" aria-label="Шкалы тона">
+      <div class="sl"><span>Серьёзный</span><div class="bar"><i style="left:58%"></i></div><span>Игривый</span></div>
+      <div class="sl"><span>Сдержанный</span><div class="bar"><i style="left:62%"></i></div><span>Яркий</span></div>
+      <div class="sl"><span>Технический</span><div class="bar"><i style="left:66%"></i></div><span>Образный</span></div>
+      <div class="sl"><span>Формальный</span><div class="bar"><i style="left:44%"></i></div><span>Дружеский</span></div>
+    </div>
+    <div class="grid3">
+      <div class="plate"><h3>Коротко</h3><p>Одна мысль — одно предложение. Заголовок держится на двух-трёх словах.</p></div>
+      <div class="plate"><h3>Светом</h3><p>Метафоры света, искры и ночи — да. Огонь как угроза, азарт как риск — нет.</p></div>
+      <div class="plate"><h3>Честно</h3><p>Объясняем механику, а не обещаем деньги. Сроки и цифры — только проверенные.</p></div>
+    </div>
+    <div class="say">
+      <div class="h">Пишем так</div><div class="h">А не так</div>
+      <div class="yes">Свет гаснет, и на поле остаются только светящиеся символы.</div><div class="no">Уникальная инновационная механика с огромными выигрышами!</div>
+      <div class="yes">Здесь пока темно: под такой запрос игр нет.</div><div class="no">Ничего не найдено. Измените параметры поиска.</div>
+      <div class="yes">Демо и полные пакеты материалов — в кабинете оператора.</div><div class="no">Для получения доступа к материалам необходимо пройти авторизацию.</div>
+      <div class="yes">Луч выхватывает колонну целиком и превращает её в вайлд.</div><div class="no">Срывай джекпот прямо сейчас — удача на твоей стороне!</div>
+    </div>
+  </div>
+</div></section>
+
+<section class="ch" id="mark"><div class="wrap">
+  <div class="cap"><div class="num">03</div><h2>Знак</h2>
+    <p>Пламя над буквой «i» со звездой в чаше. Звезда-искра повторяется над первой «i» на той же высоте — из неё вырастает вся графика бренда.</p>
+    <p>Цветной знак живёт только на тёмном. На светлом — монохром. Охранное поле, размеры и ошибки — в логобуке.</p></div>
+  <div class="stage marks">
+    <div class="plate"><img class="w" src="svg/logo_color.svg" alt="Логотип" width="3695" height="1254"><span class="label">Логотип</span></div>
+    <div class="plate"><img class="i" src="svg/icon_app.svg" alt="Иконка" width="1125" height="1135"><span class="label">Иконка</span></div>
+    <div class="plate"><img class="m" src="svg/mark_color.svg" alt="Знак" width="503" height="786"><span class="label">Знак</span></div>
+  </div>
+</div></section>
+
+<section class="ch" id="color"><div class="wrap">
+  <div class="cap"><div class="num">04</div><h2>Цвет</h2>
+    <p>Палитра — это ночь и огонь. Тёмный фон занимает большую часть площади, пламя появляется точечно и всегда светится.</p>
+    <p><strong>Фирменный градиент</strong> идёт от фуксии к янтарю — как пламя от кончика к основанию. Его не разворачивают и не добавляют в него новые цвета.</p></div>
+  <div class="stage">
+    <div class="pal">
+      <div class="chip" style="background:#0B0710;color:#F6ECE6;border-color:#2B1F35"><b>Ночь</b>#0B0710</div>
+      <div class="chip" style="background:#1E1030;color:#F6ECE6"><b>Сумерки</b>#1E1030</div>
+      <div class="chip" style="background:#E81EE0;color:#fff"><b>Фуксия</b>#E81EE0</div>
+      <div class="chip" style="background:#F21C7C;color:#fff"><b>Малина</b>#F21C7C</div>
+      <div class="chip" style="background:#F7603E;color:#fff"><b>Коралл</b>#F7603E</div>
+      <div class="chip" style="background:#FBC662;color:#0B0710"><b>Янтарь</b>#FBC662</div>
+      <div class="chip" style="background:#FBEAA4;color:#0B0710"><b>Крем</b>#FBEAA4</div>
+    </div>
+    <div class="gradbar" role="img" aria-label="Фирменный градиент от фуксии к янтарю"></div>
+    <div class="plate"><span class="label">Пропорции на площади</span>
+      <div class="prop" style="margin-top:14px">
+        <div style="flex:62;background:#0B0710;color:#A8949F">Ночь 60%</div>
+        <div style="flex:16;background:#1E1030;color:#A8949F">Сумерки 15%</div>
+        <div style="flex:13;background:#FBEAA4;color:#0B0710">Крем 15%</div>
+        <div style="flex:10;background:var(--grad);color:#fff">10%</div>
+      </div></div>
+    <div class="pairs">
+      <div class="pair" style="background:#0B0710;color:#F6ECE6"><b>Aa</b><small>Светлый на Ночи · основная пара</small></div>
+      <div class="pair" style="background:#0B0710;color:#FBC662"><b>Aa</b><small>Янтарь на Ночи · акцент</small></div>
+      <div class="pair" style="background:#FBEAA4;color:#0B0710"><b>Aa</b><small>Ночь на Креме · светлые носители</small></div>
+      <div class="pair" style="background:#F21C7C;color:#fff"><b>Aa</b><small>Белый на Малине · кнопки, плашки</small></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="ch" id="type"><div class="wrap">
+  <div class="cap"><div class="num">05</div><h2>Шрифты</h2>
+    <p><strong>Geologica</strong> — заголовки и цифры. Тонкие начертания для крупного текста, полужирный — для одного-двух слов-акцентов.</p>
+    <p><strong>Ysabeau Office</strong> — основной текст. <strong>Ysabeau SC</strong> — подписи, должности, мелкие метки капителью.</p>
+    <p>Все три шрифта бесплатные, из Google Fonts, с кириллицей.</p></div>
+  <div class="stage">
+    <div class="grid2">
+      <div class="plate spec"><span class="label">Geologica · заголовки</span><div class="big" style="font:200 clamp(56px,8vw,112px)/.95 var(--display)">Свет<b style="font-weight:600" class="grad-t">.</b></div><div class="abc" style="font-family:var(--display)">Аа Бб Вв Гг Дд Ёё Жж 0123456789</div></div>
+      <div class="plate spec"><span class="label">Ysabeau Office · текст</span><div class="big" style="font:300 clamp(56px,8vw,112px)/.95 var(--body)">Игра</div><div class="abc">Аа Бб Вв Гг Дд Ёё Жж 0123456789</div></div>
+    </div>
+    <div class="plate typescale">
+      <div><span class="meta">Дисплей<br>Geologica 200 · 72–104</span><span style="font:200 clamp(34px,5vw,64px)/1 var(--display);letter-spacing:-.02em">Не просто слоты</span></div>
+      <div><span class="meta">Заголовок<br>Geologica 300 · 40</span><span style="font:300 clamp(26px,3vw,40px)/1.1 var(--display)">Миры разные. Почерк один.</span></div>
+      <div><span class="meta">Подзаголовок<br>Geologica 400 · 22</span><span style="font:400 22px/1.2 var(--display)">Механики, которые видно</span></div>
+      <div><span class="meta">Текст<br>Ysabeau Office 400 · 17 / 1.55</span><span>Рой светлячков собирает символы в кластер и расширяет зону выигрыша с каждым каскадом.</span></div>
+      <div><span class="meta">Подпись<br>Ysabeau SC 400 · 13, разрядка 8%</span><span class="sc" style="font-size:15px;color:var(--letters)">Демо доступно в кабинете оператора</span></div>
+    </div>
+  </div>
+</div></section>
+
+<section class="ch" id="gfx"><div class="wrap">
+  <div class="cap"><div class="num">06</div><h2>Графические элементы</h2>
+    <p>Четыре элемента берутся прямо из знака. Их достаточно, чтобы любой носитель узнавался без логотипа.</p>
+    <p>Элементы не смешиваются все сразу: на одном носителе — один главный и максимум один второстепенный.</p></div>
+  <div class="stage gfx">
+    <div class="plate"><div class="art spark"><img src="svg/spark.svg" alt="Звезда-искра"></div><div class="txt"><h3>Искра</h3><p>Четырёхлучевая звезда из знака. Маркер списков, разделитель, точка над «i» в заголовках. Только в Креме, Янтаре или белом.</p></div></div>
+    <div class="plate"><div class="art constel" aria-hidden="true">
+      <img src="svg/spark.svg" alt="" style="left:12%;top:30%;width:22px"><img src="svg/spark.svg" alt="" style="left:30%;top:62%;width:12px;opacity:.6">
+      <img src="svg/spark_rose.svg" alt="" style="left:47%;top:22%;width:16px"><img src="svg/spark.svg" alt="" style="left:58%;top:52%;width:30px">
+      <img src="svg/spark_white.svg" alt="" style="left:76%;top:28%;width:10px;opacity:.5"><img src="svg/spark.svg" alt="" style="left:84%;top:68%;width:14px;opacity:.7">
+      <img src="svg/spark_white.svg" alt="" style="left:22%;top:14%;width:7px;opacity:.4"><img src="svg/spark_rose.svg" alt="" style="left:68%;top:80%;width:8px;opacity:.6">
+    </div><div class="txt"><h3>Созвездие</h3><p>Россыпь искр разного размера — фон обложек и баннеров. Не больше 8–10 искр на кадр, одна заметно крупнее остальных.</p></div></div>
+    <div class="plate"><div class="art glow" aria-hidden="true"></div><div class="txt"><h3>Свечение</h3><p>Мягкий ореол Малины и Фуксии за главным объектом. Источник света всегда один и чуть ниже центра — как пламя.</p></div></div>
+    <div class="plate"><div class="art ray" aria-hidden="true"></div><div class="txt"><h3>Луч</h3><p>Тонкая линия фирменного градиента с сиянием. Подчёркивает заголовок, отделяет блоки, ведёт взгляд к кнопке.</p></div></div>
+    <div class="plate" style="grid-column:1/-1"><div class="art tongues" aria-hidden="true">
+      <i style="height:46%"></i><i style="height:72%"></i><i style="height:92%;width:70px"></i><i style="height:64%"></i><i style="height:40%"></i>
+    </div><div class="txt"><h3>Языки</h3><p>Вертикальные ленты градиента со скруглённой вершиной — фон для экранов загрузки, баннеров и разделов «Скоро». Градиент всегда идёт снизу вверх: крем у основания, фуксия у кончика.</p></div></div>
+  </div>
+</div></section>
+
+<section class="ch" id="imagery"><div class="wrap">
+  <div class="cap"><div class="num">07</div><h2>Свет и образы</h2>
+    <p>Арт игр и промо снимается «в ночи»: тёмный фон, один тёплый источник света и светящиеся акценты. Миры разные — правила света общие.</p></div>
+  <div class="stage">
+    <div class="img3">
+      <div class="scene a"><span>Один источник</span></div>
+      <div class="scene b"><span>Светящиеся акценты</span></div>
+      <div class="scene c"><span>Луч ведёт взгляд</span></div>
+    </div>
+    <ol class="rules">
+      <li><span><b>Ночь — основа кадра.</b> Тёмные и сумеречные тона занимают не меньше 60% площади.</span></li>
+      <li><span><b>Свет один и тёплый.</b> Главный источник — янтарь или малина; холодный свет только как контровой.</span></li>
+      <li><span><b>Светится главное.</b> Ярче всего — герой, ключевой символ или кнопка, а не фон.</span></li>
+      <li><span><b>Насыщенно, но не кислотно.</b> Цвета мира подбираются к палитре бренда, неон не перебивает пламя.</span></li>
+      <li><span><b>Герои с характером.</b> Эмоция и поза важнее детализации; юмор приветствуется.</span></li>
+    </ol>
+  </div>
+</div></section>
+
+<section class="ch" id="motion"><div class="wrap">
+  <div class="cap"><div class="num">08</div><h2>Движение</h2>
+    <p>Бренд движется как пламя: плавно, снизу вверх, без рывков и вспышек. Форма знака не меняется — по языкам плывут свет и тень.</p>
+    <p>Анимацию знака используют на заставках, загрузке, сайте и в видео. В печати и на мелких размерах — статичная версия.</p></div>
+  <div class="stage motion">
+    <div class="plate show"><img class="motion" src="svg/mark_color_anim.svg" data-still="svg/mark_color.svg" alt="Анимированный знак" width="503" height="786"></div>
+    <div class="plate"><span class="label">Параметры движения</span>
+      <div class="tok" style="margin-top:14px">
+        <div>Цикл анимации знака<code>8 с, бесшовно</code></div>
+        <div>Появление элементов<code>600–1200 мс</code></div>
+        <div>Наведение, нажатие<code>160–240 мс</code></div>
+        <div>Кривая<code>cubic-bezier(.2, .7, .2, 1)</code></div>
+        <div>Направление<code>снизу вверх</code></div>
+        <div>Нельзя<code>мигание, тряска, вращение</code></div>
+      </div></div>
+  </div>
+</div></section>
+
+<section class="ch" id="carriers"><div class="wrap">
+  <div class="cap"><div class="num">09</div><h2>Носители</h2>
+    <p>Как бренд выглядит на основных носителях. Это примеры, а не жёсткие шаблоны: правила цвета, шрифтов и графики важнее точного повторения.</p>
+    <p>Имена и контакты на макетах — условные.</p></div>
+  <div class="stage carriers">
+    <div class="cr c-cards"><div class="bc">
+        <div class="card front"><img src="svg/logo_color.svg" alt="Визитка, лицевая сторона"></div>
+        <div class="card back"><img class="mk" src="svg/mark_color.svg" alt=""><div><div class="nm">Имя Фамилия</div><div class="rl">Арт-директор</div></div><div class="ct">name@illuminator.studio<br>+7 000 000-00-00<br>illuminator.studio</div><div class="ln"></div></div>
+      </div><span class="label">Визитка · 85 × 55 мм</span></div>
+    <div class="cr c-avatar"><div class="av"><div class="c l"><img src="svg/mark_color.svg" alt="Аватар"></div><div class="c m"><img src="svg/mark_color.svg" alt=""></div><div class="c s"><img src="svg/mark_color.svg" alt=""></div></div><span class="label">Аватар соцсетей · знак на Ночи</span></div>
+    <div class="cr c-banner"><div class="banner">
+        <img class="sp" src="svg/spark.svg" alt="" style="left:6%;top:14%"><img class="sp" src="svg/spark_rose.svg" alt="" style="left:46%;top:76%;width:1.1%">
+        <div><h4>Не просто <b class="grad-t">слоты</b></h4><p>Игры с собственным характером — от первой искры до релиза.</p></div>
+        <img src="svg/logo_color.svg" alt="">
+      </div><span class="label">Обложка соцсетей · 1500 × 500</span></div>
+    <div class="cr c-slide"><div class="slide"><div class="glow"></div><img class="bigmark" src="svg/mark_color.svg" alt="">
+        <div class="hd"><img src="svg/logo_color.svg" alt=""><span>Презентация для операторов · 2027</span></div>
+        <h5>Миры разные. <b class="grad-t">Почерк один.</b></h5>
+        <div class="ft"><div><b>6</b>игр в каталоге</div><div><b>3</b>механики света</div><div><b>1</b>кабинет оператора</div></div>
+      </div><span class="label">Слайд презентации · 16 : 9</span></div>
+    <div class="cr c-phone"><div class="phone"><img class="motion" src="svg/mark_color_anim.svg" data-still="svg/mark_color.svg" alt="Экран загрузки"><div class="pr"><i></i></div><div class="ps">Illuminator</div></div><span class="label">Экран загрузки игры</span></div>
+    <div class="cr c-badge"><div class="badge"><div class="t"><img src="svg/mark_color.svg" alt=""></div><div class="n"><b>Имя Фамилия</b><span>Illuminator</span></div><div class="f">EXPO 2027</div></div><span class="label">Бейдж выставки</span></div>
+    <div class="cr c-mail"><div class="mail"><img src="svg/icon_black.svg" alt=""><div><b>Имя Фамилия</b><span>Продюсер игр · Illuminator</span><div class="ln"></div><span>name@illuminator.studio · illuminator.studio</span></div></div><span class="label">Подпись письма · на белом — монохром</span></div>
+  </div>
+</div></section>
+
+<section class="ch" id="files"><div class="wrap">
+  <div class="cap"><div class="num">10</div><h2>Файлы</h2>
+    <p>Полный набор версий знака, PNG и иконки приложения — в архиве логобука. Здесь — то, что нужно для работы с графикой бренда.</p></div>
+  <div class="stage"><ul class="list">
+    <li><code>svg/logo_color.svg</code><span>Логотип, цвет (только на тёмном)</span></li>
+    <li><code>svg/logo_color_anim.svg</code><span>Логотип, анимация</span></li>
+    <li><code>svg/logo_white.svg · logo_black.svg</code><span>Логотип, монохром</span></li>
+    <li><code>svg/icon_app.svg · icon_app_anim.svg</code><span>Иконка приложения, статика и анимация</span></li>
+    <li><code>svg/mark_color.svg · mark_color_anim.svg</code><span>Знак без надписи</span></li>
+    <li><code>svg/spark.svg · spark_white.svg · spark_rose.svg</code><span>Звезда-искра для графики</span></li>
+    <li><code>Шрифты</code><span>Geologica, Ysabeau Office, Ysabeau SC — Google Fonts</span></li>
+  </ul></div>
+</div></section>
+</main>
+
+<footer><div class="wrap"><img src="svg/logo_color.svg" alt="Illuminator"><span>Брендбук Illuminator · 2026</span></div></footer>
+<script>if (matchMedia('(prefers-reduced-motion: reduce)').matches) document.querySelectorAll('img.motion').forEach(i => i.src = i.dataset.still);</script>
+</body>
+</html>
