@@ -200,14 +200,14 @@ h3 { font: 400 22px/1.2 var(--display); margin: 0 0 10px; }
 .phone img { width: 46%; margin-top: -18%; }
 .phone .pr { position: absolute; left: 20%; right: 20%; bottom: 20%; height: 3px; border-radius: 3px; background: var(--line); overflow: hidden; }
 .phone .pr i { display: block; height: 100%; width: 62%; background: var(--grad); border-radius: 3px; }
-.phone .ps { position: absolute; bottom: 12%; left: 0; right: 0; text-align: center; font: 400 10px var(--sc); letter-spacing: .14em; color: var(--muted); }
+.phone img.ps { position: absolute; bottom: 11%; left: 50%; width: 44%; margin: 0; transform: translateX(-50%); }
 /* badge */
 .badge { width: min(190px, 100%); margin: 0 auto; aspect-ratio: 2 / 3; border-radius: 14px; background: var(--ink); border: 1px solid var(--line); overflow: hidden; display: grid; grid-template-rows: 1.1fr 1fr auto; position: relative; box-shadow: 0 18px 40px rgba(0,0,0,.45); }
 .badge::before { content: ""; position: absolute; top: 7px; left: 50%; width: 30px; height: 6px; margin-left: -15px; border-radius: 6px; background: #241A2C; }
 .badge .t { display: grid; place-items: center; background: radial-gradient(60% 60% at 50% 60%, rgba(242,28,124,.3), transparent 70%); }
 .badge .t img { width: 38%; }
 .badge .n { padding: 0 14px; display: grid; align-content: center; }
-.badge .n b { font: 300 18px/1.1 var(--display); } .badge .n span { font: 400 11px var(--sc); letter-spacing: .1em; color: var(--letters); }
+.badge .n b { font: 300 18px/1.1 var(--display); } .badge .n .wm { width: 62%; margin-top: 8px; display: block; }
 .badge .f { height: 26px; background: var(--grad); display: grid; place-items: center; font: 600 10px var(--display); letter-spacing: .16em; color: var(--ink); }
 /* mail */
 .mail { background: #FFFFFF; color: #1A1220; border-radius: 12px; padding: 22px 26px; display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 20px; align-items: center; }
@@ -261,11 +261,11 @@ a:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-ra
     <img src="svg/spark_white.svg" alt="" style="left:62%;top:9%;width:8px;opacity:.3">
   </div>
   <div class="wrap">
-    <div class="top"><span>Illuminator · студия игр</span><span>Брендбук · версия 1 · ноябрь 2026</span></div>
+    <div class="top"><span>Illuminator · студия игр</span><span>Брендбук</span></div>
     <img class="logo motion" src="svg/logo_color_anim.svg" data-still="svg/logo_color.svg" alt="Логотип Illuminator: надпись illuminator, над буквой i пламя со звездой" width="3695" height="1254">
     <div class="lede">
       <h1>Свет — <b class="grad-t">часть игры</b></h1>
-      <p>Как звучит, выглядит и движется Illuminator: смысл бренда, голос, цвет, шрифты, графика и примеры носителей. Правила самого знака — в логобуке.</p>
+      <p>Как звучит, выглядит и движется Illuminator: смысл бренда, голос, цвет, шрифты, движение и примеры носителей. Правила самого знака — в логобуке.</p>
     </div>
   </div>
 </header>
@@ -274,9 +274,8 @@ a:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-ra
   <div class="wrap"><ol>
     <li><a href="#essence"><span>01</span>Суть</a></li><li><a href="#voice"><span>02</span>Голос</a></li>
     <li><a href="#mark"><span>03</span>Знак</a></li><li><a href="#color"><span>04</span>Цвет</a></li>
-    <li><a href="#type"><span>05</span>Шрифты</a></li><li><a href="#gfx"><span>06</span>Графика</a></li>
-    <li><a href="#imagery"><span>07</span>Образы</a></li><li><a href="#motion"><span>08</span>Движение</a></li>
-    <li><a href="#carriers"><span>09</span>Носители</a></li><li><a href="#files"><span>10</span>Файлы</a></li>
+    <li><a href="#type"><span>05</span>Шрифты</a></li><li><a href="#motion"><span>06</span>Движение</a></li>
+    <li><a href="#carriers"><span>07</span>Носители</a></li><li><a href="#files"><span>08</span>Файлы</a></li>
   </ol></div>
 </nav>
 
@@ -390,47 +389,8 @@ a:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-ra
   </div>
 </div></section>
 
-<section class="ch" id="gfx"><div class="wrap">
-  <div class="cap"><div class="num">06</div><h2>Графические элементы</h2>
-    <p>Четыре элемента берутся прямо из знака. Их достаточно, чтобы любой носитель узнавался без логотипа.</p>
-    <p>Элементы не смешиваются все сразу: на одном носителе — один главный и максимум один второстепенный.</p></div>
-  <div class="stage gfx">
-    <div class="plate"><div class="art spark"><img src="svg/spark.svg" alt="Звезда-искра"></div><div class="txt"><h3>Искра</h3><p>Четырёхлучевая звезда из знака. Маркер списков, разделитель, точка над «i» в заголовках. Только в Креме, Янтаре или белом.</p></div></div>
-    <div class="plate"><div class="art constel" aria-hidden="true">
-      <img src="svg/spark.svg" alt="" style="left:12%;top:30%;width:22px"><img src="svg/spark.svg" alt="" style="left:30%;top:62%;width:12px;opacity:.6">
-      <img src="svg/spark_rose.svg" alt="" style="left:47%;top:22%;width:16px"><img src="svg/spark.svg" alt="" style="left:58%;top:52%;width:30px">
-      <img src="svg/spark_white.svg" alt="" style="left:76%;top:28%;width:10px;opacity:.5"><img src="svg/spark.svg" alt="" style="left:84%;top:68%;width:14px;opacity:.7">
-      <img src="svg/spark_white.svg" alt="" style="left:22%;top:14%;width:7px;opacity:.4"><img src="svg/spark_rose.svg" alt="" style="left:68%;top:80%;width:8px;opacity:.6">
-    </div><div class="txt"><h3>Созвездие</h3><p>Россыпь искр разного размера — фон обложек и баннеров. Не больше 8–10 искр на кадр, одна заметно крупнее остальных.</p></div></div>
-    <div class="plate"><div class="art glow" aria-hidden="true"></div><div class="txt"><h3>Свечение</h3><p>Мягкий ореол Малины и Фуксии за главным объектом. Источник света всегда один и чуть ниже центра — как пламя.</p></div></div>
-    <div class="plate"><div class="art ray" aria-hidden="true"></div><div class="txt"><h3>Луч</h3><p>Тонкая линия фирменного градиента с сиянием. Подчёркивает заголовок, отделяет блоки, ведёт взгляд к кнопке.</p></div></div>
-    <div class="plate" style="grid-column:1/-1"><div class="art tongues" aria-hidden="true">
-      <i style="height:46%"></i><i style="height:72%"></i><i style="height:92%;width:70px"></i><i style="height:64%"></i><i style="height:40%"></i>
-    </div><div class="txt"><h3>Языки</h3><p>Вертикальные ленты градиента со скруглённой вершиной — фон для экранов загрузки, баннеров и разделов «Скоро». Градиент всегда идёт снизу вверх: крем у основания, фуксия у кончика.</p></div></div>
-  </div>
-</div></section>
-
-<section class="ch" id="imagery"><div class="wrap">
-  <div class="cap"><div class="num">07</div><h2>Свет и образы</h2>
-    <p>Арт игр и промо снимается «в ночи»: тёмный фон, один тёплый источник света и светящиеся акценты. Миры разные — правила света общие.</p></div>
-  <div class="stage">
-    <div class="img3">
-      <div class="scene a"><span>Один источник</span></div>
-      <div class="scene b"><span>Светящиеся акценты</span></div>
-      <div class="scene c"><span>Луч ведёт взгляд</span></div>
-    </div>
-    <ol class="rules">
-      <li><span><b>Ночь — основа кадра.</b> Тёмные и сумеречные тона занимают не меньше 60% площади.</span></li>
-      <li><span><b>Свет один и тёплый.</b> Главный источник — янтарь или малина; холодный свет только как контровой.</span></li>
-      <li><span><b>Светится главное.</b> Ярче всего — герой, ключевой символ или кнопка, а не фон.</span></li>
-      <li><span><b>Насыщенно, но не кислотно.</b> Цвета мира подбираются к палитре бренда, неон не перебивает пламя.</span></li>
-      <li><span><b>Герои с характером.</b> Эмоция и поза важнее детализации; юмор приветствуется.</span></li>
-    </ol>
-  </div>
-</div></section>
-
 <section class="ch" id="motion"><div class="wrap">
-  <div class="cap"><div class="num">08</div><h2>Движение</h2>
+  <div class="cap"><div class="num">06</div><h2>Движение</h2>
     <p>Бренд движется как пламя: плавно, снизу вверх, без рывков и вспышек. Форма знака не меняется — по языкам плывут свет и тень.</p>
     <p>Анимацию знака используют на заставках, загрузке, сайте и в видео. В печати и на мелких размерах — статичная версия.</p></div>
   <div class="stage motion">
@@ -448,7 +408,7 @@ a:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-ra
 </div></section>
 
 <section class="ch" id="carriers"><div class="wrap">
-  <div class="cap"><div class="num">09</div><h2>Носители</h2>
+  <div class="cap"><div class="num">07</div><h2>Носители</h2>
     <p>Как бренд выглядит на основных носителях. Это примеры, а не жёсткие шаблоны: правила цвета, шрифтов и графики важнее точного повторения.</p>
     <p>Имена и контакты на макетах — условные.</p></div>
   <div class="stage carriers">
@@ -463,18 +423,18 @@ a:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-ra
         <img src="svg/logo_color.svg" alt="">
       </div><span class="label">Обложка соцсетей · 1500 × 500</span></div>
     <div class="cr c-slide"><div class="slide"><div class="glow"></div><img class="bigmark" src="svg/mark_color.svg" alt="">
-        <div class="hd"><img src="svg/logo_color.svg" alt=""><span>Презентация для операторов · 2027</span></div>
+        <div class="hd"><img src="svg/logo_color.svg" alt=""><span>Презентация для операторов</span></div>
         <h5>Миры разные. <b class="grad-t">Почерк один.</b></h5>
         <div class="ft"><div><b>6</b>игр в каталоге</div><div><b>3</b>механики света</div><div><b>1</b>кабинет оператора</div></div>
       </div><span class="label">Слайд презентации · 16 : 9</span></div>
-    <div class="cr c-phone"><div class="phone"><img class="motion" src="svg/mark_color_anim.svg" data-still="svg/mark_color.svg" alt="Экран загрузки"><div class="pr"><i></i></div><div class="ps">Illuminator</div></div><span class="label">Экран загрузки игры</span></div>
-    <div class="cr c-badge"><div class="badge"><div class="t"><img src="svg/mark_color.svg" alt=""></div><div class="n"><b>Имя Фамилия</b><span>Illuminator</span></div><div class="f">EXPO 2027</div></div><span class="label">Бейдж выставки</span></div>
+    <div class="cr c-phone"><div class="phone"><img class="motion" src="svg/mark_color_anim.svg" data-still="svg/mark_color.svg" alt="Экран загрузки"><div class="pr"><i></i></div><img class="ps" src="svg/wordmark_color.svg" alt="illuminator"></div><span class="label">Экран загрузки игры</span></div>
+    <div class="cr c-badge"><div class="badge"><div class="t"><img src="svg/mark_color.svg" alt=""></div><div class="n"><b>Имя Фамилия</b><img class="wm" src="svg/wordmark_color.svg" alt="illuminator"></div><div class="f">EXPO</div></div><span class="label">Бейдж выставки</span></div>
     <div class="cr c-mail"><div class="mail"><img src="svg/icon_black.svg" alt=""><div><b>Имя Фамилия</b><span>Продюсер игр · Illuminator</span><div class="ln"></div><span>name@illuminator.studio · illuminator.studio</span></div></div><span class="label">Подпись письма · на белом — монохром</span></div>
   </div>
 </div></section>
 
 <section class="ch" id="files"><div class="wrap">
-  <div class="cap"><div class="num">10</div><h2>Файлы</h2>
+  <div class="cap"><div class="num">08</div><h2>Файлы</h2>
     <p>Полный набор версий знака, PNG и иконки приложения — в архиве логобука. Здесь — то, что нужно для работы с графикой бренда.</p></div>
   <div class="stage"><ul class="list">
     <li><code>svg/logo_color.svg</code><span>Логотип, цвет (только на тёмном)</span></li>
@@ -482,13 +442,14 @@ a:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-ra
     <li><code>svg/logo_white.svg · logo_black.svg</code><span>Логотип, монохром</span></li>
     <li><code>svg/icon_app.svg · icon_app_anim.svg</code><span>Иконка приложения, статика и анимация</span></li>
     <li><code>svg/mark_color.svg · mark_color_anim.svg</code><span>Знак без надписи</span></li>
+    <li><code>svg/wordmark_color.svg</code><span>Надпись без пламени — для мелких подписей</span></li>
     <li><code>svg/spark.svg · spark_white.svg · spark_rose.svg</code><span>Звезда-искра для графики</span></li>
     <li><code>Шрифты</code><span>Geologica, Ysabeau Office, Ysabeau SC — Google Fonts</span></li>
   </ul></div>
 </div></section>
 </main>
 
-<footer><div class="wrap"><img src="svg/logo_color.svg" alt="Illuminator"><span>Брендбук Illuminator · 2026</span></div></footer>
+<footer><div class="wrap"><img src="svg/logo_color.svg" alt="Illuminator"><span>Брендбук Illuminator</span></div></footer>
 <script>if (matchMedia('(prefers-reduced-motion: reduce)').matches) document.querySelectorAll('img.motion').forEach(i => i.src = i.dataset.still);</script>
 </body>
 </html>
